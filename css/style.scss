@@ -1,0 +1,107 @@
+$color: rgb(51, 50, 50);
+$bg_menu: rgb(66, 22, 228);
+
+body {
+    background: #fff;
+    font-size: 14px;
+}
+
+img {
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+header {
+    .top-header {
+        background: #ededed;
+        font-size: 14px;
+        color: $color;
+        padding: 3px 0;
+        p {
+            margin-bottom: 0;
+            line-height: 35px;
+            font-size: 13px;           
+        }
+        .social {
+            a {
+                color: $color;
+                i {
+                    width: 35px;
+                    height: 35px;
+                    text-align: center;
+                    line-height: 35px;
+                    border-radius: 50%;
+                    border: 1px solid $color;
+                }
+            }
+        }
+    }
+    .main-header {
+        padding: 15px 0;
+    }
+    .menu-header {
+        background: $bg_menu;
+        ul {
+            li {
+                display: inline-block;
+                transition: all 0.3s;
+                position: relative;
+                ul {
+                    position: absolute;
+                    width: 150px;
+                    background: $color;
+                    left: 0;
+                    top: 60px;
+                    text-align: left;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all .3s;
+                    li {
+                        display: block;
+                        a {
+                            display: block;
+                            text-transform: inherit;
+                            padding: 5px;
+                            border: 1px dashed #ededed;
+                        }
+                    }
+                }
+                a {
+                    display: inline-block;
+                    padding: 10px 30px;
+                    text-transform: uppercase;
+                    color: #fff;
+                }
+                &.active {
+                    a{
+                        background: $color;
+                    }
+                }
+                &:hover {
+                    transition: all 0.3s;
+                    a{
+                        background: $color;
+                    }
+                    ul {
+                        opacity: 1;
+                        visibility: visible;
+                        top: 40px;
+                    }
+                }
+            }
+        }
+    }
+}
+
